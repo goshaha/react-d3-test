@@ -9,17 +9,26 @@ const Layout = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/blogs">Blogs</Link>
+            <Link to="/straight">Straight</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/linechart">LineChart</Link>
+          </li>
+          <li>
+            <Link to="/multilinechart">MultiLineChart</Link>
+          </li>
+          <li>
+            <Link to="/lineChartTooltip">LineChartTooltip</Link>
+            <li>
+              <Link to="/donutchart">DonutChart</Link>
+            </li>
           </li>
         </ul>
       </nav>
 
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Layout;
