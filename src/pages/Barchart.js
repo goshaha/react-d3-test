@@ -20,9 +20,7 @@ const Barchart = () => {
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
     // Parse the Data
-    d3.csv(
-      "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv"
-    ).then(function (data) {
+    d3.csv("./onecatonenum.csv").then(function (data) {
       // X axis
       const x = d3
         .scaleBand()

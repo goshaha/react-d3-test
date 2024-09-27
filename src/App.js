@@ -3,6 +3,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import LineChart from "./pages/LineChart";
 import MultiLineChart from "./pages/MultiLineChart";
+import MultiLineChart2 from "./pages/MultilineChart2";
 import DonutChart from "./pages/DonutChart";
 import LineChartTooltip from "./pages/LineChartTooltip";
 import Barchart from "./pages/Barchart";
@@ -20,6 +21,7 @@ function App() {
           <Route path="linechartanimated" element={<LineChartAnimated />} />
           <Route path="donutchart" element={<DonutChart />} />
           <Route path="multilinechart" element={<MultiLineChart />} />
+          <Route path="multilinechart2" element={<MultiLineChart2 />} />
           <Route path="lineChartTooltip" element={<LineChartTooltip />} />
           <Route path="*" element={<NoPage />} />
         </Route>

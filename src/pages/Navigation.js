@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const NavigationStyled = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
   grid-gap: 10px;
   width: 100%;
 
@@ -53,6 +53,10 @@ const projectsLinks = [
   {
     path: "/multilinechart",
     name: "MultiLineChart",
+  },
+  {
+    path: "/multilinechart2",
+    name: "MultiLineChart2",
   },
   {
     path: "/lineChartTooltip",
