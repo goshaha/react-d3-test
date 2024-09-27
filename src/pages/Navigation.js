@@ -59,6 +59,10 @@ const projectsLinks = [
     name: "MultiLineChart2",
   },
   {
+    path: "/multilinechartanimated",
+    name: "MultiLineChartAnimated",
+  },
+  {
     path: "/lineChartTooltip",
     name: "LineChartTooltip",
   },

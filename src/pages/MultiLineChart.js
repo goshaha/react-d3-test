@@ -120,6 +120,21 @@ const MultiLineChart = () => {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x));
 
+      // add animation
+      const lines = svg.selectAll(".line");
+
+      lines.each((d, i, nodes) => {
+        const element = nodes[i];
+        const length = element.getTotalLength();
+        d3.select(element)
+          .attr("stroke-dasharray", `${length},${length}`)
+          .attr("stroke-dashoffset", length)
+          .transition()
+          .duration(750)
+          .ease(d3.easeLinear)
+          .attr("stroke-dashoffset", 0);
+      });
+
       // Add the Y Axis
       svg.append("g").attr("class", "axis").call(d3.axisLeft(y));
     });

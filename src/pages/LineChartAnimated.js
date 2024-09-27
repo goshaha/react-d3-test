@@ -4,37 +4,39 @@ import { useEffect, useRef } from "react";
 const LineChartAnimated = () => {
   const ref = useRef();
 
+  const data = [
+    {
+      year: 2000,
+      popularity: 50,
+    },
+    {
+      year: 2001,
+      popularity: 150,
+    },
+    {
+      year: 2002,
+      popularity: 200,
+    },
+    {
+      year: 2003,
+      popularity: 130,
+    },
+    {
+      year: 2004,
+      popularity: 240,
+    },
+    {
+      year: 2005,
+      popularity: 380,
+    },
+    {
+      year: 2006,
+      popularity: 420,
+    },
+  ];
+
   useEffect(() => {
-    var data = [
-      {
-        year: 2000,
-        popularity: 50,
-      },
-      {
-        year: 2001,
-        popularity: 150,
-      },
-      {
-        year: 2002,
-        popularity: 200,
-      },
-      {
-        year: 2003,
-        popularity: 130,
-      },
-      {
-        year: 2004,
-        popularity: 240,
-      },
-      {
-        year: 2005,
-        popularity: 380,
-      },
-      {
-        year: 2006,
-        popularity: 420,
-      },
-    ];
+    const margin = { top: 0, bottom: 20, left: 30, right: 20 };
 
     // Create SVG and padding for the chart
     const svg = d3
@@ -42,7 +44,7 @@ const LineChartAnimated = () => {
       .append("svg")
       .attr("height", 300)
       .attr("width", 600);
-    const margin = { top: 0, bottom: 20, left: 30, right: 20 };
+
     const chart = svg
       .append("g")
       .attr("transform", `translate(${margin.left},0)`);

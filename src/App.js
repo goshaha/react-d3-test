@@ -9,6 +9,7 @@ import LineChartTooltip from "./pages/LineChartTooltip";
 import Barchart from "./pages/Barchart";
 import NoPage from "./pages/NoPage";
 import LineChartAnimated from "./pages/LineChartAnimated";
+import MultiLineChartAnimated from "./pages/MultiLineChartAnimated";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
           <Route path="linechartanimated" element={<LineChartAnimated />} />
           <Route path="donutchart" element={<DonutChart />} />
           <Route path="multilinechart" element={<MultiLineChart />} />
+          <Route
+            path="multilinechartanimated"
+            element={<MultiLineChartAnimated />}
+          />
           <Route path="multilinechart2" element={<MultiLineChart2 />} />
           <Route path="lineChartTooltip" element={<LineChartTooltip />} />
           <Route path="*" element={<NoPage />} />
