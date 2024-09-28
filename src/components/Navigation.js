@@ -1,6 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink as BaseNavLink } from "react-router-dom";
 import styled from "styled-components";
+
+const NavLink = styled(BaseNavLink)`
+  background-color: cadetblue;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 4px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &.active {
+    background-color: #4d7c80;
+  }
+`;
 
 const NavigationStyled = styled.div`
   display: grid;
@@ -23,17 +38,6 @@ const NavigationStyled = styled.div`
     margin-top: 10px;
     padding: 15px 10px 10px;
     width: 95%;
-
-    .badge {
-      background-color: cadetblue;
-      color: white;
-      padding: 4px 8px;
-      text-align: center;
-      border-radius: 5px;
-      margin: 4px;
-      cursor: pointer;
-      text-decoration: none;
-    }
   }
 `;
 
@@ -79,9 +83,9 @@ const Navigation = () => {
       <div className="column1">
         <div className="home-center-content">
           {projectsLinks.map((item) => (
-            <Link key={item?.path} to={item.path} className="badge">
+            <NavLink key={item?.path} to={item.path}>
               {item?.name}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>

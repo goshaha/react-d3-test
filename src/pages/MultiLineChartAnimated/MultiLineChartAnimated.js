@@ -3,9 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import MultilineChart from "./components/MultilineChart";
 import Legend from "./components/Legend";
-import schc from "./SCHC.json";
-import vcit from "./VCIT.json";
-import portfolio from "./portfolio.json";
+import def from "./data/def.json";
+import hig from "./data/hig.json";
+import abc from "./data/abc.json";
 
 const StyledWrapper = styled.div`
   body {
@@ -23,28 +23,32 @@ const StyledWrapper = styled.div`
   }
   .checkbox {
     margin: 10px;
+
+    .checkbox-label {
+      font-size: 18px;
+    }
   }
 `;
 
-const portfolioData = {
-  name: "Portfolio",
+const abcData = {
+  name: "ABC",
   color: "#ffffff",
-  items: portfolio.map((d) => ({ ...d, date: new Date(d.date) })),
+  items: abc.map((d) => ({ ...d, date: new Date(d.date) })),
 };
-const schcData = {
-  name: "SCHC",
-  color: "#d53e4f",
-  items: schc.map((d) => ({ ...d, date: new Date(d.date) })),
+const defData = {
+  name: "DEF",
+  color: "#ff471a",
+  items: def.map((d) => ({ ...d, date: new Date(d.date) })),
 };
-const vcitData = {
-  name: "VCIT",
-  color: "#0000ff",
-  items: vcit.map((d) => ({ ...d, date: new Date(d.date) })),
+const higData = {
+  name: "HIG",
+  color: "#47d147",
+  items: hig.map((d) => ({ ...d, date: new Date(d.date) })),
 };
 
 const dimensions = {
-  width: 600,
-  height: 300,
+  width: 1000,
+  height: 400,
   margin: {
     top: 30,
     right: 30,
@@ -54,11 +58,11 @@ const dimensions = {
 };
 
 export default function MultiLineChartAnimated() {
-  const [selectedItems, setSelectedItems] = React.useState(["SCHC", "VCIT"]);
-  const legendData = [portfolioData, schcData, vcitData];
+  const [selectedItems, setSelectedItems] = React.useState(["DEF", "HIG"]);
+  const legendData = [abcData, defData, higData];
   const chartData = [
-    portfolioData,
-    ...[schcData, vcitData].filter((d) => selectedItems.includes(d.name)),
+    abcData,
+    ...[defData, higData].filter((d) => selectedItems.includes(d.name)),
   ];
   const onChangeSelection = (name) => {
     const newSelectedItems = selectedItems.includes(name)
