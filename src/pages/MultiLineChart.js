@@ -1,6 +1,8 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
+import useMediaQuery from "../hooks/useMediaQuery";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const StyledWrapper = styled.div`
   path {
@@ -24,14 +26,20 @@ const StyledWrapper = styled.div`
   }
 `;
 
+const desktopWidth = 1000;
+
 const MultiLineChart = () => {
   const ref = useRef();
+  const firstRender = useRef(true);
+  const isDesktop = useMediaQuery('(min-width: 1000px)');
+  const { width: windowWidth } = useWindowDimensions();
 
-  useEffect(() => {
-    const margin = { top: 30, right: 20, bottom: 70, left: 50 },
-      width = 1000 - margin.left - margin.right,
+  const defaultWidth = windowWidth > desktopWidth ? desktopWidth : windowWidth
+
+  const drawChart = () => {
+    const margin = { top: 30, right: 50, bottom: 70, left: 50 },
+      width = defaultWidth - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
-
     // Parse the date / time
     const parseDate = d3.timeParse("%b %Y");
 
@@ -111,6 +119,17 @@ const MultiLineChart = () => {
             return (d.color = color(d.key));
           })
           .text(d.key);
+
+        svg.append("text")
+          .text(() => d.key)
+          .attr('x', width + 4)
+          .attr(
+            'y',
+            () => y(d.value[d.value.length - 1].price) + (d.key === 'IBM' ? 15 : 0)
+          )
+          .style('fill', () => color(d.key))
+          .style('font-family', 'sans-serif')
+          .style('font-size', 12)
       });
 
       // Add the X Axis
@@ -138,7 +157,18 @@ const MultiLineChart = () => {
       // Add the Y Axis
       svg.append("g").attr("class", "axis").call(d3.axisLeft(y));
     });
-  }, []);
+  }
+
+  useEffect(() => {
+    if(windowWidth > desktopWidth && !firstRender.current) return;
+
+    d3.select("g").remove();
+    drawChart();
+
+    if (firstRender.current) {
+      firstRender.current = false;
+    }
+  }, [isDesktop, windowWidth]);
 
   return (
     <StyledWrapper>
