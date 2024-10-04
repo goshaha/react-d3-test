@@ -246,7 +246,6 @@ const LineChartTooltip = () => {
     <StyledWrapper>
       <div id="mbody">
         <svg width={"100%"} height={500} id="barchart" ref={ref} />
-        <div id="tooltip"></div>
       </div>
     </StyledWrapper>
   );

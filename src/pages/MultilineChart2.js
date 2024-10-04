@@ -99,6 +99,7 @@ const MultiLineChart2 = () => {
             return (d.color =
               i === current ? color(d.key) : `${color(d.key)}80`);
           })
+          .style("cursor", "pointer")
           .on("click", () => {
             setCurrent(i);
           })
