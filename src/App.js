@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import LineChart from "./pages/LineChart";
 import MultiLineChart from "./pages/MultiLineChart";
@@ -10,6 +10,7 @@ import Barchart from "./pages/Barchart";
 import NoPage from "./pages/NoPage";
 import LineChartAnimated from "./pages/LineChartAnimated";
 import MultiLineChartAnimated from "./pages/MultiLineChartAnimated";
+import HorizontalBars from "./pages/HorizontalBars";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="multilinechart2" element={<MultiLineChart2 />} />
           <Route path="lineChartTooltip" element={<LineChartTooltip />} />
+          <Route path="horizontalbars" element={<HorizontalBars />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

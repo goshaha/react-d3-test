@@ -74,6 +74,10 @@ const projectsLinks = [
     path: "/donutchart",
     name: "DonutChart",
   },
+  {
+    path: "/horizontalbars",
+    name: "HorizontalBars",
+  },
 ];
 
 const Navigation = () => {
