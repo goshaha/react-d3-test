@@ -11,6 +11,7 @@ import NoPage from "./pages/NoPage";
 import LineChartAnimated from "./pages/LineChartAnimated";
 import MultiLineChartAnimated from "./pages/MultiLineChartAnimated";
 import HorizontalBars from "./pages/HorizontalBars";
+import AtlanticStormCharts from "./pages/AtlanticStormCharts";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="multilinechart2" element={<MultiLineChart2 />} />
           <Route path="lineChartTooltip" element={<LineChartTooltip />} />
           <Route path="horizontalbars" element={<HorizontalBars />} />
+          <Route path="atlanticstormcharts" element={<AtlanticStormCharts />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

@@ -78,6 +78,10 @@ const projectsLinks = [
     path: "/horizontalbars",
     name: "HorizontalBars",
   },
+  {
+    path: "/atlanticstormcharts",
+    name: "AtlanticStormCharts",
+  },
 ];
 
 const Navigation = () => {
