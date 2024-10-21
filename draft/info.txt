@@ -1,0 +1,13 @@
+
+https://stackoverflow.com/questions/67759442/sort-array-based-on-other-array-js
+let labels = ["orange", "green", "steelblue"]
+let data = [0, 2.5, 2,];
+
+let zip = (...a) => a[0].map((_, n) => a.map(b => b[n]))
+const [resultLabels, resultData] = zip(...
+    zip(labels, data)
+        .sort((x, y) => y[1] - x[1])
+)
+
+console.log(resultLabels)
+console.log(...resultData)
