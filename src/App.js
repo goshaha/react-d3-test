@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import LineChart from "./pages/LineChart";
 import MultiLineChart from "./pages/MultiLineChart";
 import MultiLineChart2 from "./pages/MultilineChart2";
+import MultiLineChart3 from "./pages/MultilineChart3";
 import DonutChart from "./pages/DonutChart";
 import LineChartTooltip from "./pages/LineChartTooltip";
 import Barchart from "./pages/Barchart";
@@ -29,6 +30,7 @@ function App() {
             element={<MultiLineChartAnimated />}
           />
           <Route path="multilinechart2" element={<MultiLineChart2 />} />
+          <Route path="multilinechart3" element={<MultiLineChart3 />} />
           <Route path="lineChartTooltip" element={<LineChartTooltip />} />
           <Route path="horizontalbars" element={<HorizontalBars />} />
           <Route path="atlanticstormcharts" element={<AtlanticStormCharts />} />
